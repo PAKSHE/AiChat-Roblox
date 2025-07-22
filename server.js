@@ -9,7 +9,7 @@ import fs from 'fs'; // Import fs if it's used elsewhere (though not directly us
 
 // 2. Initialize Express app
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080; // Render จะกำหนด process.env.PORT ให้เอง, ใช้ 8080 เป็น fallback สำหรับการรันในเครื่องของคุณ
 
 // 3. Middleware to parse JSON request bodies
 app.use(bodyParser.json());
